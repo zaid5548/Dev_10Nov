@@ -2,8 +2,8 @@ const puppeteer = require("puppeteer");
 const challenges = require("./challenges");
 
 
-const id = "mapovif924@testbnk.com";
-const pw = "12345678";
+const id = "koxes42892@pidouno.com";
+const pw = "Z@id0554811khan";
 
 
 
@@ -37,6 +37,7 @@ const pw = "12345678";
             let newTab = await browser.newPage();
             await addChallenge(newTab , challenges[i]);
         }
+        
         
         // create challenge
         // await Promise.all( [ page.waitForNavigation({waitUntil:"networkidle0"}) , page.click('.btn.btn-green.backbone.pull-right')]);
