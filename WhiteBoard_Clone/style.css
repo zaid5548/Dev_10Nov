@@ -1,0 +1,38 @@
+*{
+    box-sizing: border-box;
+}
+
+body,html{
+    margin:0px;
+}
+
+
+.tools{
+    background: aliceblue;
+    height: 100px;
+    display: flex;
+    align-items: center;
+}
+
+.content{
+    height: calc(100vh - 100px);
+    background: white;
+}
+
+#canvas{
+  
+} 
+
+.toolbox{
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+.tool{
+    height: 50px;
+}
+
+.tool img{
+    height: 100%;
+}
