@@ -1,50 +1,29 @@
-// npm init -y
-// npm install electron
-// "start":"electron ."
-// npm install ejs-electron
-
-// electron logic
 
 const electron = require("electron");
-const {app , BrowserWindow} = electron;
-
-const ejse = require("ejs-electron");
+const ejse = require('ejs-electron');
 
 
-function createWindow(){
+
+
+const app = electron.app;
+const BrowserWindow = electron.BrowserWindow;
+
+
+function createWindow () {
     const win = new BrowserWindow({
-        width: 800,
-        height: 600,
-        webPreferences: {
-          nodeIntegration: true, // desktop appplication usme node enable
-          enableRemoteModule:true
-        }
-      })
-      win.loadFile('index.ejs').then(function(){
-          win.maximize();
-          win.webContents.openDevTools();
-      });
-}
-
-app.whenReady().then(createWindow);
+      width: 800,
+      height: 600,
+      webPreferences: {
+        nodeIntegration: true, // desktop application usme node enabled hojaega
+        enableRemoteModule:true
+      }
+    })
+    win.loadFile('index.ejs').then(function(){
+        win.maximize();
+        win.webContents.openDevTools() // you will get dev tools opened by default 
+    });
+  }
 
 
 
-
-
-
-
-
-
-// os specific code
-app.on('window-all-closed', () => {
-    if (process.platform !== 'darwin') {
-      app.quit()
-    }
-  })
-  
-  app.on('activate', () => {
-    if (BrowserWindow.getAllWindows().length === 0) {
-      createWindow()
-    }
-  })
+app.whenReady().then(createWindow)
