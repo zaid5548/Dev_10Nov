@@ -20,6 +20,7 @@ const pw = "zaidkhan554811";
         await page.goto("https://www.instagram.com");
         // await page.goto("https://www.hackerrank.com/auth/login");
         // await page.click(".sqdOP.L3NKy.y3zKF");  //if any account exist before
+        await page.waitForSelector('input[name="username"]',{visible:true})
         await page.type('input[name="username"]',id);
         // await page.type('#input-1',id);
         await page.type('input[aria-label="Password"]',pw);
