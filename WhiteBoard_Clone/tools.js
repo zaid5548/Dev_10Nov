@@ -15,9 +15,19 @@ let blue=document.querySelector(".blue");
 let black=document.querySelector(".black");
 
 let pencilSize=document.querySelector("#pencilSize");
+let eraserSize=document.querySelector("#eraserSize");
+
+let lastPensilSize=1;
+let lastEraserSize=1;
 
 pencilSize.addEventListener("change",function(){
-    ctx.lineWidth=pencilSize.value;
+    lastPensilSize=pencilSize.value;
+    ctx.lineWidth=lastPensilSize;
+})
+
+eraserSize.addEventListener("change",function(){
+    lastEraserSize=eraserSize.value;
+    ctx.lineWidth=lastEraserSize;
 })
 
 red.addEventListener("click",function(){
@@ -37,6 +47,7 @@ let activeTool="pencil";
 
 pencil.addEventListener("click",function(){
     if(!pencil.classList.contains("active-tool")){
+        ctx.lineWidth = lastPensilSize;
         eraser.classList.remove("active-tool");
         eraserOptions.classList.add("hide");
         pencil.classList.add("active-tool");
@@ -53,6 +64,7 @@ pencil.addEventListener("click",function(){
 
 eraser.addEventListener("click",function(){
     if(!eraser.classList.contains("active-tool")){
+        ctx.lineWidth = lastEraserSize;
         pencil.classList.remove("active-tool");
         pencilOptions.classList.add("hide");
         eraser.classList.add("active-tool");
