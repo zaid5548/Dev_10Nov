@@ -9,6 +9,30 @@ let eraserOptions=document.querySelector("#eraser-options");
 
 // ctx.lineWidth=40;
 
+let red=document.querySelector(".red");
+let yellow=document.querySelector(".yellow");
+let blue=document.querySelector(".blue");
+let black=document.querySelector(".black");
+
+let pencilSize=document.querySelector("#pencilSize");
+
+pencilSize.addEventListener("change",function(){
+    ctx.lineWidth=pencilSize.value;
+})
+
+red.addEventListener("click",function(){
+    ctx.strokeStyle="red";
+})
+yellow.addEventListener("click",function(){
+    ctx.strokeStyle="yellow";
+})
+blue.addEventListener("click",function(){
+    ctx.strokeStyle="blue";
+})
+black.addEventListener("click",function(){
+    ctx.strokeStyle="black";
+})
+
 let activeTool="pencil";
 
 pencil.addEventListener("click",function(){
